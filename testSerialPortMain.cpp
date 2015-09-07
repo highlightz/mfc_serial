@@ -17,42 +17,42 @@ void genControls( vector< float >& angles, vector< float >& speeds )
 
 	// Controls ranges
 	const float maxAngle =  0.7f;
-  const float minAngle = -0.7f;
-  const float maxSpeed =  0.7f;
+  	const float minAngle = -0.7f;
+	const float maxSpeed =  0.7f;
 
 	// Specify angles
 	angles[0] =  0.8f;
-  angles[1] = -0.8f;
-  angles[2] =  0.8f;
-  angles[3] = -0.8f;
-  angles[4] =  0.8f;
+  	angles[1] = -0.8f;
+  	angles[2] =  0.8f;
+  	angles[3] = -0.8f;
+  	angles[4] =  0.8f;
 
-  angles[5] = -0.8f;
-  angles[6] =  0.8f;
-  angles[7] = -0.8f;
-  angles[8] =  0.8f;
-  angles[9] = -0.8f;
+  	angles[5] = -0.8f;
+	angles[6] =  0.8f;
+  	angles[7] = -0.8f;
+  	angles[8] =  0.8f;
+  	angles[9] = -0.8f;
 
 	// Limit the angle controls to a safe range
-  for ( int i = 0; i < numOfControls; i++ )
-  {
-    if ( angles[i] > maxAngle )
-    {
-      angles[i] = maxAngle;
-    }
+  	for ( int i = 0; i < numOfControls; i++ )
+  	{
+    		if ( angles[i] > maxAngle )
+    		{
+      			angles[i] = maxAngle;
+    		}
 
-    if ( angles[i] < minAngle )
-    {
-      angles[i] = minAngle;
-    }
-  }
+    		if ( angles[i] < minAngle )
+    		{
+      			angles[i] = minAngle;
+    		}
+  	}
 
 	// Compute speeds according to specified angles
-  for ( int i = 0; i < numOfControls; i++ )
-  {
-    const float p = 10.0f;
-    speeds[i] = maxSpeed / sqrt( fabs( p * angles[i] ) + 1.0f );
-  }
+  	for ( int i = 0; i < numOfControls; i++ )
+  	{
+    		const float p = 10.0f;
+    		speeds[i] = maxSpeed / sqrt( fabs( p * angles[i] ) + 1.0f );
+  	}
 }
 
 void genSend( float angle, float speed, char* send )
